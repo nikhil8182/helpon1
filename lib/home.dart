@@ -120,12 +120,12 @@ class _homeState extends State<home> {
                   ],
                 ),
                 SizedBox(
-                  height: ,
+                  height: mediaHeight*0.035,
                 ),
                 findBed(),
                 SizedBox(height: mediaHeight*0.01,),
                 contact(),
-                // SizedBox(height: mediaHeight*0.001,),
+                SizedBox(height: mediaHeight*0.001,),
                 // helpline
                 getvaccinated(),
                 // get vacinnated
@@ -160,7 +160,7 @@ class _homeState extends State<home> {
                 style: TextStyle(
                   fontSize: mediaHeight * 0.025, fontWeight: FontWeight.w600,),
               )),
-          SizedBox(height: mediaHeight*00.02,),
+          SizedBox(height: mediaHeight*00.01,),
 
           Row(
 
@@ -439,6 +439,7 @@ class contact extends StatelessWidget {
     return Container(
       // color: Colors.green,
       height: mediaHeight*0.15,
+      width: mediaHeight*0.397,
       margin: EdgeInsets.all(20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -453,7 +454,7 @@ class contact extends StatelessWidget {
               Text(
                 "Contact Helpline",
                 style: TextStyle(
-                    fontSize: 17,
+                    fontSize: mediaHeight*0.025,
                     // color: Colors.white,
                     fontWeight: FontWeight.w600),
               )
@@ -467,6 +468,7 @@ class contact extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
+                    height: mediaHeight*0.036,
                     margin: EdgeInsets.only(left: 20),
                     // color: Colors.green,
                     child: Padding(
@@ -475,7 +477,7 @@ class contact extends StatelessWidget {
                       child: Text(
                         "State Helpline",
                         style: TextStyle(
-                            fontSize: 17,
+                            fontSize: mediaHeight*0.019,
                             fontWeight: FontWeight.w400,
                             // color: Colors.white
                         ),
@@ -491,7 +493,7 @@ class contact extends StatelessWidget {
                       child: Text(
                         "104",
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: mediaHeight*0.019,
                             // color: Colors.white
                         ),
                       ),
@@ -530,7 +532,7 @@ class contact extends StatelessWidget {
                       child: Text(
                         "Covid-19 Helpline",
                         style: TextStyle(
-                            fontSize: 17,
+                          fontSize: mediaHeight*0.019,
                             fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -545,7 +547,7 @@ class contact extends StatelessWidget {
                       child: Text(
                         "94443-40496",
                         style: TextStyle(
-                          fontSize: 12,
+                          fontSize: mediaHeight*0.019,
                         ),
                       ),
                     ),
@@ -628,7 +630,7 @@ class findBed extends StatelessWidget {
               padding: const EdgeInsets.all(21.0),
               child: Text(
                 "Find Bed Vacancy",
-                style: TextStyle(fontSize: 25,color: Colors.white),
+                style: TextStyle(fontSize: mediaHeight*0.03,color: Colors.white),
               ),
             ),
             //bed vacancy

@@ -1,13 +1,12 @@
 import 'package:external_app_launcher/external_app_launcher.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:helpon/home.dart';
-import 'package:popup_widget/popup_widget.dart';
-import 'package:qr_flutter/qr_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:clipboard/clipboard.dart';
 
+import 'package:qr_flutter/qr_flutter.dart';
+
+import 'package:clipboard/clipboard.dart';
+import 'package:vibration/vibration.dart';
+String copy = "copy";
 class CmQrPage extends StatefulWidget {
 
   @override
@@ -15,6 +14,11 @@ class CmQrPage extends StatefulWidget {
 }
 
 class _CmQrPageState extends State<CmQrPage> {
+  @override
+  void initState() {
+    copy = "copy";
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     var mediaHeight = MediaQuery.of(context).size.height;
@@ -82,13 +86,19 @@ class _CmQrPageState extends State<CmQrPage> {
                           width: mediaWidth*0.04,
                         ),
                         GestureDetector(
-                            onTap: () {
+                            onTap: () async{
+                              if (await Vibration.hasAmplitudeControl()) {
+                              Vibration.vibrate(amplitude: 128, duration: 50);
+                              }
                               AlertDialog(title: Text("Sample Alert Dialog"));
                               FlutterClipboard.copy('tncmprf@iob')
                                   .then((value) => print('copied'));
+                              setState(() {
+                                copy ='copied!';
+                              });
                             },
                             child: Text(
-                              "Copy",
+                              copy,
                               style: TextStyle(color: Colors.red),
                             )),
                       ],
